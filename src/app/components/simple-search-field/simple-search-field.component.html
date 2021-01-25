@@ -1,0 +1,10 @@
+<div class="simple-search-field">
+  <form>
+    <select [(ngModel)]="selectedOption" name="searchSelection">
+      <option *ngFor="let option of searchOptions" [ngValue]="option.id">{{option.name | uppercase}}</option>
+    </select>
+    <input #searchInput (keydown.enter)="onSearch(searchInput.value); searchInput.value = '';"
+           placeholder="Search by ISBN"/>
+    <button (click)="onSearch(searchInput.value); searchInput.value = '';">Search</button>
+  </form>
+</div>

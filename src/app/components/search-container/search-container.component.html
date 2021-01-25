@@ -1,7 +1,7 @@
 <div class="search-container">
     <h1>Books of Hungary</h1>
     <simple-search-field
-        (searchISBN)="newSearchISBN($event)"
+      (search)="newSimpleSearch($event)"
     ></simple-search-field>
     <result-books [books]="books" ></result-books>
 </div>
