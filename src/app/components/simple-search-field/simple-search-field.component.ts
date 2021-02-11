@@ -9,10 +9,9 @@ import {SimpleSearchForm} from '../model/simple-search.form';
 export class SimpleSearchFieldComponent implements OnInit {
 
   @Output() search = new EventEmitter<SimpleSearchForm>();
-  private searchInput = new EventEmitter<string>();
-  private searchOption = new EventEmitter<string>();
-  private selectedOption = 0;
-  private searchOptions = [
+  private simpleSearch: SimpleSearchForm;
+  selectedOption = 0;
+  searchOptions = [
     {id: 0, name: 'isbn'},
     {id: 1, name: 'title'},
     {id: 2, name: 'author'},
@@ -23,7 +22,10 @@ export class SimpleSearchFieldComponent implements OnInit {
   }
 
   onSearch(searchInput: string): void {
-    this.searchInput.emit(searchInput);
-    this.searchOption.emit(this.searchOptions[this.selectedOption].name);
+    this.simpleSearch = {
+      searchInput,
+      searchOption: this.searchOptions[this.selectedOption].name
+    };
+    this.search.emit(this.simpleSearch);
   }
 }

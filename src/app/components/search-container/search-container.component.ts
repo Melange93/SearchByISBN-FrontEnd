@@ -12,8 +12,6 @@ import {SimpleSearchForm} from '../model/simple-search.form';
 
 export class SearchContainerComponent implements OnInit {
 
-  @Input() search: SimpleSearchForm;
-
   books: BookComponent[];
 
   constructor(
@@ -25,10 +23,8 @@ export class SearchContainerComponent implements OnInit {
   }
 
   newSimpleSearch(search: SimpleSearchForm) {
-    console.log(search.searchInput.toString());
-    console.log(search.searchOption.toString());
     this.books = [];
-    this.searchService.getSimpleSearchList(this.search.searchInput).subscribe((res) => {
+    this.searchService.getSimpleSearchList(search.searchOption.toString().toLowerCase(), search.searchInput.toString()).subscribe((res) => {
       this.books.push(res);
     });
   }
