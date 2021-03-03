@@ -24,8 +24,9 @@ export class SearchContainerComponent implements OnInit {
 
   newSimpleSearch(search: SimpleSearchForm) {
     this.books = [];
-    this.searchService.getSimpleSearchList(search.searchOption.toString().toLowerCase(), search.searchInput.toString()).subscribe((res) => {
-      this.books.push(res);
-    });
+    this.searchService.getSimpleSearchListByParam(search.searchOption.toString().toLowerCase(), search.searchInput.toString())
+      .subscribe((res) =>
+        res.forEach(value => this.books.push(value))
+      );
   }
 }

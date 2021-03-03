@@ -15,9 +15,9 @@ export class SearchService {
   ) {
   }
 
-  getSimpleSearchList(searchingOption: string, searchISBN: string): Observable<BookComponent> {
-    const searchingUrl = this.serverMainUrl + '/searchbook?' + searchingOption + '=' + searchISBN;
-    return this.http.get<BookComponent>(searchingUrl)
+  getSimpleSearchListByParam(searchingOption: string, searchInput: string): Observable<BookComponent[]> {
+    const searchUrl = this.serverMainUrl + '/searchbook?param=' + searchingOption + '&input=' + searchInput;
+    return this.http.get<BookComponent[]>(searchUrl)
       .pipe();
   }
 }
