@@ -3,7 +3,8 @@ import {SimpleSearchForm} from '../model/simple-search.form';
 
 @Component({
   selector: 'simple-search-field',
-  templateUrl: 'simple-search-field.component.html'
+  templateUrl: 'simple-search-field.component.html',
+  styleUrls: ['./simple-search-field.component.css']
 })
 
 export class SimpleSearchFieldComponent implements OnInit {

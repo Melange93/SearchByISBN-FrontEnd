@@ -7,7 +7,8 @@ import {SimpleSearchForm} from '../model/simple-search.form';
 @Component({
   selector: 'search-container',
   templateUrl: 'search-container.component.html',
-  providers: [SearchService]
+  providers: [SearchService],
+  styleUrls: ['./search-container.component.css']
 })
 
 export class SearchContainerComponent implements OnInit {

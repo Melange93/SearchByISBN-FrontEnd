@@ -1,10 +1,19 @@
 <div class="simple-search-field">
-  <form>
-    <select [(ngModel)]="selectedOption" name="searchSelection">
+  <form class="input-group">
+    <span class="input-group-text">Search by</span>
+    <select
+      class="form-select"
+      [(ngModel)]="selectedOption" name="searchSelection">
       <option *ngFor="let option of searchOptions" [ngValue]="option.id">{{option.name | uppercase}}</option>
     </select>
-    <input #searchInput (keydown.enter)="onSearch(searchInput.value); searchInput.value = '';"
-           placeholder="Search by ISBN"/>
-    <button (click)="onSearch(searchInput.value); searchInput.value = '';">Search</button>
+    <input #searchInput
+           class="form-control"
+           (keydown.enter)="onSearch(searchInput.value); searchInput.value = '';"
+           placeholder="Search Book"/>
+    <button
+      class="btn"
+      (click)="onSearch(searchInput.value); searchInput.value = '';">
+      Search
+    </button>
   </form>
 </div>

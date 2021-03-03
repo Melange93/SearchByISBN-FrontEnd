@@ -1,3 +1,8 @@
-.simple-search-field {
+select, input {
+  max-width: fit-content;
+}
 
+button, span {
+  background-color: black;
+  color: white;
 }

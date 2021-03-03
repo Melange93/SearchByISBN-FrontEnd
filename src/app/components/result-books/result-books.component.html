@@ -1,5 +1,22 @@
 <div class="result-books">
-    <div *ngFor="let book of books">
-        <p>{{book.isbn}} {{book.title}} {{book.author}} {{book.publisher}}</p>
-    </div>
+  <table class="table table-hover table-bordered">
+    <thead class="table-dark">
+      <tr>
+        <th>ISBN13</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Publisher</th>
+        <th>Detail</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let book of books">
+    <tr>
+      <td>{{book.isbn}}</td>
+      <td>{{book.title}}</td>
+      <td>{{book.author}}</td>
+      <td>{{book.publisher}}</td>
+      <td>More</td>
+    </tr>
+    </tbody>
+  </table>
 </div>

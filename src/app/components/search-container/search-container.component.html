@@ -1,7 +1,9 @@
 <div class="search-container">
-    <h1>Books of Hungary</h1>
-    <simple-search-field
-      (search)="newSimpleSearch($event)"
-    ></simple-search-field>
-    <result-books [books]="books" ></result-books>
+  <h1>Books of Hungary</h1>
+  <simple-search-field
+    (search)="newSimpleSearch($event)"
+  ></simple-search-field>
+  <div *ngIf="books?.length > 0">
+    <result-books [books]="books"></result-books>
+  </div>
 </div>
