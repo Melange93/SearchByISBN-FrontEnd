@@ -6,3 +6,8 @@ button, span {
   background-color: #212529;
   color: white;
 }
+
+form {
+  justify-content: center;
+  padding: 20px;
+}
