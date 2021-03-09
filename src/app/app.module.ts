@@ -1,6 +1,5 @@
 import { ResultBookDetailComponent } from './components/result-book-detail/result-book-detail.component';
 import { ResultBooksComponent } from './components/result-books/result-books.component';
-import { ResultBookComponent } from './components/result-book/result-book.component';
 import { SimpleSearchFieldComponent } from './components/simple-search-field/simple-search-field.component';
 import { SearchContainerComponent } from './components/search-container/search-container.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -16,7 +15,6 @@ import { BofhLogoComponent } from './components/bofh-logo/bofh-logo.component';
     AppComponent,
     SearchContainerComponent,
     SimpleSearchFieldComponent,
-    ResultBookComponent,
     ResultBooksComponent,
     ResultBookDetailComponent,
     BofhLogoComponent
