@@ -1,13 +1,14 @@
 <div class="result-books">
+  <p>{{books.length}}</p>
   <table class="table table-hover table-bordered">
     <thead class="table-dark">
-      <tr>
-        <th>ISBN13</th>
-        <th>Title</th>
-        <th>Author</th>
-        <th>Publisher</th>
-        <th>Detail</th>
-      </tr>
+    <tr>
+      <th>ISBN13</th>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Publisher</th>
+      <th>Details</th>
+    </tr>
     </thead>
     <tbody *ngFor="let book of books">
     <tr>
@@ -15,7 +16,13 @@
       <td>{{book.title}}</td>
       <td>{{book.author}}</td>
       <td>{{book.publisher}}</td>
-      <td>More</td>
+      <td>
+        <button type="button" class="btn btn-link"
+        (click)="onDetails(book.isbn)"
+        >
+          More...
+        </button>
+      </td>
     </tr>
     </tbody>
   </table>

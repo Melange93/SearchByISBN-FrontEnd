@@ -1,0 +1,13 @@
+.bofh-logo {
+  inline-size: fit-content;
+  margin: 0 auto;
+}
+
+h1 {
+  font-family: Cormorant Garamond, bold, serif;
+  font-weight: 700;
+  border-top: 1px black solid;
+  border-bottom: 1px black double;
+  display: inline-block;
+  padding: 30px;
+}
