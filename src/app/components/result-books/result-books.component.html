@@ -4,23 +4,21 @@
     <thead class="table-dark">
     <tr>
       <th>#</th>
-      <th>ISBN13</th>
-      <th>Title</th>
-      <th>Author</th>
-      <th>Publisher</th>
+      <th *ngFor="let header of bookHeaders">
+        {{header | titlecase}}
+      </th>
       <th>Details</th>
     </tr>
     </thead>
-    <tbody *ngFor="let book of books; index as i">
-    <tr>
+    <tbody>
+    <tr *ngFor="let book of books; index as i">
       <td>{{i + 1}}</td>
-      <td>{{book.isbn}}</td>
-      <td>{{book.title}}</td>
-      <td>{{book.author}}</td>
-      <td>{{book.publisher}}</td>
+      <td *ngFor="let header of bookHeaders">
+        {{book[header]}}
+      </td>
       <td>
         <button type="button" class="btn btn-link"
-        (click)="onDetails(book.isbn)"
+        (click)="onDetails(book.isbn13)"
         >
           More...
         </button>

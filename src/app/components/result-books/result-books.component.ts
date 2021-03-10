@@ -13,6 +13,13 @@ export class ResultBooksComponent implements OnInit {
   @Input() books: BookComponent[];
   @Output() detailsBookISBN: string;
 
+  bookHeaders = [
+    'isbn13',
+    'title',
+    'author',
+    'publisher'
+  ];
+
   constructor() {
   }
 
