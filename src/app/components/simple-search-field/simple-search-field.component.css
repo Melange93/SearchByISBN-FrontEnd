@@ -1,3 +1,8 @@
+form {
+  justify-content: center;
+  padding: 20px;
+}
+
 select, input {
   max-width: fit-content;
 }
@@ -7,7 +12,8 @@ button, span {
   color: white;
 }
 
-form {
-  justify-content: center;
-  padding: 20px;
+button:hover {
+  border: 1px solid #ced4da;
+  background-color: #ced4da;
+  color: #212529;
 }
