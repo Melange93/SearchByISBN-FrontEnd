@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { BofhLogoComponent } from './components/bofh-logo/bofh-logo.component';
+import { ResultBooksPaginationComponent } from './components/result-books-pagination/result-books-pagination.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { BofhLogoComponent } from './components/bofh-logo/bofh-logo.component';
     SimpleSearchFieldComponent,
     ResultBooksComponent,
     ResultBookDetailComponent,
-    BofhLogoComponent
+    BofhLogoComponent,
+    ResultBooksPaginationComponent
   ],
   imports: [
     BrowserModule,
