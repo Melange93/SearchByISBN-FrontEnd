@@ -1,21 +1,21 @@
 import {TestBed, inject} from '@angular/core/testing';
 
-import {ResultBooksComponent} from './result-books.component';
+import {ResultTableComponent} from './result-table.component';
 
 describe('a result-books component', () => {
-  let component: ResultBooksComponent;
+  let component: ResultTableComponent;
 
   // register all needed dependencies
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
-        ResultBooksComponent
+        ResultTableComponent
       ]
     });
   });
 
   // instantiation through framework injection
-  beforeEach(inject([ResultBooksComponent], (ResultBooksComponent) => {
+  beforeEach(inject([ResultTableComponent], (ResultBooksComponent) => {
     component = ResultBooksComponent;
   }));
 

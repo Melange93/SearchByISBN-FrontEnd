@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ResultBooksPaginationPagesizeselectComponent } from './result-books-pagination-pagesizeselect.component';
+import { ResultTablePaginationPagesizeComponent } from './result-table-pagination-pagesize.component';
 
 describe('ResultBooksPaginationPagesizeselectComponent', () => {
-  let component: ResultBooksPaginationPagesizeselectComponent;
-  let fixture: ComponentFixture<ResultBooksPaginationPagesizeselectComponent>;
+  let component: ResultTablePaginationPagesizeComponent;
+  let fixture: ComponentFixture<ResultTablePaginationPagesizeComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ResultBooksPaginationPagesizeselectComponent ]
+      declarations: [ ResultTablePaginationPagesizeComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ResultBooksPaginationPagesizeselectComponent);
+    fixture = TestBed.createComponent(ResultTablePaginationPagesizeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

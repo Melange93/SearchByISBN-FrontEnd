@@ -1,16 +1,16 @@
 import {Component, Input, OnInit, Output} from '@angular/core';
 
-import {BookComponent} from '../model/book.model';
-import {SearchService} from '../service/search.service';
-import {PaginationModel} from '../model/pagination.model';
+import {BookComponent} from '../../../model/book.model';
+import {SearchService} from '../../../service/search.service';
+import {PaginationModel} from '../../../model/pagination.model';
 
 @Component({
-  selector: 'result-books',
-  templateUrl: 'result-books.component.html',
+  selector: 'result-table',
+  templateUrl: 'result-table.component.html',
   providers: [SearchService]
 })
 
-export class ResultBooksComponent implements OnInit {
+export class ResultTableComponent implements OnInit {
   @Input() books: Array<BookComponent>;
   @Output() detailsBookISBN: string;
   showBooks: Array<BookComponent>;

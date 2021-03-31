@@ -1,8 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 
-import {BookComponent} from '../model/book.model';
-import {SearchService} from '../service/search.service';
-import {SimpleSearchForm} from '../model/simple-search.form';
+import {BookComponent} from '../../../model/book.model';
+import {SearchService} from '../../../service/search.service';
+import {SimpleSearchForm} from '../../../model/simple-search.form';
 
 @Component({
   selector: 'search-container',

@@ -1,10 +1,10 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {PaginationModel} from '../model/pagination.model';
+import {PaginationModel} from '../../../model/pagination.model';
 
 @Component({
-  selector: 'app-result-books-pagination',
-  templateUrl: './result-books-pagination.component.html',
-  styleUrls: ['./result-books-pagination.component.css']
+  selector: 'app-result-table-pagination',
+  templateUrl: './result-table-pagination.component.html',
+  styleUrls: ['./result-table-pagination.component.css']
 })
 export class ResultBooksPaginationComponent implements OnInit {
   @Output() changePage = new EventEmitter<PaginationModel>(true);

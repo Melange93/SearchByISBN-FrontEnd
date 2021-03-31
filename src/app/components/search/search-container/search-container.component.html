@@ -3,7 +3,7 @@
   <simple-search-field
     (search)="newSimpleSearch($event)"
   ></simple-search-field>
-  <div class="result-books-container" *ngIf="books?.length > 0">
-    <result-books [books]="books"></result-books>
+  <div class="result-table-container" *ngIf="books?.length > 0">
+    <result-table [books]="books"></result-table>
   </div>
 </div>

@@ -1,8 +1,8 @@
-<div class="result-books">
-  <div id="result-books-helps">
+<div class="result-table">
+  <div id="result-table-helps">
     <h4 class="total-result">Total: {{books.length}} results found.</h4>
-    <app-result-books-pagination [numberOfBooks]="numberOfBooks"
-                                 (changePage)="onChangePage($event)"></app-result-books-pagination>
+    <app-result-table-pagination [numberOfBooks]="numberOfBooks"
+                                 (changePage)="onChangePage($event)"></app-result-table-pagination>
   </div>
   <table class="table table-hover table-bordered">
     <thead class="table-dark">

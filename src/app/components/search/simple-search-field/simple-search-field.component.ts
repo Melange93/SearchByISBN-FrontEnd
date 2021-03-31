@@ -1,5 +1,5 @@
 import {Component, OnInit, Output, EventEmitter} from '@angular/core';
-import {SimpleSearchForm} from '../model/simple-search.form';
+import {SimpleSearchForm} from '../../../model/simple-search.form';
 
 @Component({
   selector: 'simple-search-field',

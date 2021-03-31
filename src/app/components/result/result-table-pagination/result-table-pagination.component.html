@@ -1,6 +1,6 @@
-<div>
-  <app-result-books-pagination-pagesizeselect (changeBookPerPage)="onPageSizeChange($event)">
-  </app-result-books-pagination-pagesizeselect>
+<div class="result-table-pagination">
+  <app-result-table-pagination-pagesize (changeBookPerPage)="onPageSizeChange($event)">
+  </app-result-table-pagination-pagesize>
   <nav aria-label="Page navigation">
     <ul class="pagination">
       <li class="page-item" [ngClass]="{disabled: currentPage === 1}">
