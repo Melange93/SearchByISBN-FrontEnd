@@ -14,8 +14,8 @@ export class ResultBooksComponent implements OnInit {
   @Input() books: Array<BookComponent>;
   @Output() detailsBookISBN: string;
   showBooks: Array<BookComponent>;
-  startIndex = 0;
-  endIndex = 10;
+  startIndex: number;
+  endIndex: number;
   numberOfBooks: number;
   bookHeaders = [
     'isbn13',
@@ -28,6 +28,8 @@ export class ResultBooksComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.startIndex = 0;
+    this.endIndex = 10;
     this.showBooks = this.books.slice(this.startIndex, this.endIndex);
     this.numberOfBooks = this.books.length;
   }
@@ -38,6 +40,8 @@ export class ResultBooksComponent implements OnInit {
   }
 
   onChangePage(indexes: PaginationModel) {
-    this.showBooks = this.books.slice(indexes.fromIndex, indexes.toIndex);
+    this.startIndex = indexes.fromIndex;
+    this.endIndex = indexes.toIndex;
+    this.showBooks = this.books.slice(this.startIndex, this.endIndex);
   }
 }

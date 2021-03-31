@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { BofhLogoComponent } from './components/bofh-logo/bofh-logo.component';
 import { ResultBooksPaginationComponent } from './components/result-books-pagination/result-books-pagination.component';
+import { ResultBooksPaginationPagesizeselectComponent } from './components/result-books-pagination-pagesizeselect/result-books-pagination-pagesizeselect.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ResultBooksPaginationComponent } from './components/result-books-pagina
     ResultBooksComponent,
     ResultBookDetailComponent,
     BofhLogoComponent,
-    ResultBooksPaginationComponent
+    ResultBooksPaginationComponent,
+    ResultBooksPaginationPagesizeselectComponent
   ],
   imports: [
     BrowserModule,

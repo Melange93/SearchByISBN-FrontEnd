@@ -1,6 +1,4 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {BookComponent} from '../model/book.model';
-import {from} from 'rxjs';
 import {PaginationModel} from '../model/pagination.model';
 
 @Component({
@@ -9,23 +7,35 @@ import {PaginationModel} from '../model/pagination.model';
   styleUrls: ['./result-books-pagination.component.css']
 })
 export class ResultBooksPaginationComponent implements OnInit {
-  @Input() numberOfBooks: number;
   @Output() changePage = new EventEmitter<PaginationModel>(true);
-  bookPerPage = 10;
+  @Input() numberOfBooks: number;
+  bookPerPage: number;
   maxPage: number;
   currentPage = 1;
 
   constructor() {
   }
 
-  ngOnInit() {
-    this.maxPage = Math.ceil(this.numberOfBooks / this.bookPerPage);
+  ngOnInit(): void {
+    this.bookPerPage = 10;
+    this.maxPage = this.calculateMaxPage();
   }
 
-  setPage(page: number) {
+  setPage(page: number): void {
     this.currentPage = page;
-    const fromIndex = this.currentPage * this.bookPerPage - this.bookPerPage;
-    const toIndex = this.currentPage * this.bookPerPage;
+    this.emitChangePageEvent();
+  }
+
+  onPageSizeChange(bookPerPage: number) {
+    this.bookPerPage = bookPerPage;
+    this.currentPage = 1;
+    this.maxPage = this.calculateMaxPage();
+    this.emitChangePageEvent();
+  }
+
+  emitChangePageEvent(): void {
+    const fromIndex = this.calculateFromIndex();
+    const toIndex = this.calculateToIndex();
     const pagination = {
       fromIndex,
       toIndex
@@ -33,4 +43,15 @@ export class ResultBooksPaginationComponent implements OnInit {
     this.changePage.emit(pagination);
   }
 
+  private calculateMaxPage(): number {
+    return Math.ceil(this.numberOfBooks / this.bookPerPage);
+  }
+
+  private calculateFromIndex(): number {
+    return this.currentPage * this.bookPerPage - this.bookPerPage;
+  }
+
+  private calculateToIndex(): number {
+    return this.currentPage * this.bookPerPage;
+  }
 }

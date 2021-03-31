@@ -1,0 +1,9 @@
+<select class="result-books-pagination-select form-select"
+        [(ngModel)]="bookPerPage"
+        (ngModelChange) ="setBookPerPage($event)"
+        name="bookPerPage">
+  <option *ngFor="let option of bookPerPageOption"
+          [ngValue]="option.value">
+    {{option.value}}
+  </option>
+</select>

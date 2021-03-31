@@ -4,7 +4,7 @@
     <select
       class="form-select"
       [(ngModel)]="selectedOption" name="searchSelection">
-      <option *ngFor="let option of searchOptions" [ngValue]="option.id">{{option.name | uppercase}}</option>
+      <option *ngFor="let option of searchOptions" [ngValue]="option.id">{{option.name | titlecase }}</option>
     </select>
     <input #searchInput
            class="form-control"
