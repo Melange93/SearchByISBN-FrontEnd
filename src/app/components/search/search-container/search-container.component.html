@@ -4,6 +4,6 @@
     (search)="newSimpleSearch($event)"
   ></simple-search-field>
   <div class="result-table-container" *ngIf="books?.length > 0">
-    <result-table [books]="books"></result-table>
+    <app-result-container [books]="books"></app-result-container>
   </div>
 </div>

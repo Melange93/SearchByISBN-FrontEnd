@@ -1,22 +1,20 @@
-import {Component, Input, OnInit, Output} from '@angular/core';
+import {Component, Input, OnInit, Output, Pipe} from '@angular/core';
 
 import {BookComponent} from '../../../model/book.model';
 import {SearchService} from '../../../service/search.service';
 import {PaginationModel} from '../../../model/pagination.model';
+import {EventEmitter} from 'events';
+import {async} from '@angular/core/testing';
 
 @Component({
-  selector: 'result-table',
+  selector: 'app-result-table',
   templateUrl: 'result-table.component.html',
   providers: [SearchService]
 })
 
 export class ResultTableComponent implements OnInit {
-  @Input() books: Array<BookComponent>;
   @Output() detailsBookISBN: string;
-  showBooks: Array<BookComponent>;
-  startIndex: number;
-  endIndex: number;
-  numberOfBooks: number;
+  @Input() showBooks: Map<number, BookComponent>;
   bookHeaders = [
     'isbn13',
     'title',
@@ -27,21 +25,14 @@ export class ResultTableComponent implements OnInit {
   constructor() {
   }
 
-  ngOnInit() {
-    this.startIndex = 0;
-    this.endIndex = 10;
-    this.showBooks = this.books.slice(this.startIndex, this.endIndex);
-    this.numberOfBooks = this.books.length;
-  }
+  ngOnInit() {}
 
   onDetails(bookISBN: string) {
-    this.detailsBookISBN = bookISBN;
-    console.log(this.detailsBookISBN);
+    console.log(bookISBN);
   }
 
-  onChangePage(indexes: PaginationModel) {
-    this.startIndex = indexes.fromIndex;
-    this.endIndex = indexes.toIndex;
-    this.showBooks = this.books.slice(this.startIndex, this.endIndex);
+  getKeys(showBooks: Map<number, BookComponent>): number[] {
+    console.log(showBooks);
+    return Array.from(showBooks.keys());
   }
 }

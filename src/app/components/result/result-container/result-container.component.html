@@ -1,0 +1,8 @@
+<div class="result">
+  <div id="result-table-helps">
+    <h4 class="total-result">Total: {{books.length}} results found.</h4>
+    <app-result-table-pagination [numberOfBooks]="numberOfBooks"
+                                 (changePage)="onChangePage($event)"></app-result-table-pagination>
+  </div>
+  <app-result-table [showBooks]="showBooks"></app-result-table>
+</div>

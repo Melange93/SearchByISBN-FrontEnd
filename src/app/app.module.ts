@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { BofhLogoComponent } from './components/bofh-logo/bofh-logo.component';
 import { ResultBooksPaginationComponent } from './components/result/result-table-pagination/result-table-pagination.component';
 import { ResultTablePaginationPagesizeComponent } from './components/result/result-table-pagination-pagesize/result-table-pagination-pagesize.component';
+import { ResultContainerComponent } from './components/result/result-container/result-container.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ResultTablePaginationPagesizeComponent } from './components/result/resu
     ResultBookDetailComponent,
     BofhLogoComponent,
     ResultBooksPaginationComponent,
-    ResultTablePaginationPagesizeComponent
+    ResultTablePaginationPagesizeComponent,
+    ResultContainerComponent
   ],
   imports: [
     BrowserModule,
